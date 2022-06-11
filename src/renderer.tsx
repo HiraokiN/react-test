@@ -5,6 +5,8 @@ import {Chart, registerables } from 'chart.js'
 import { MyDropzone } from "./dropzone";
 Chart.register(...registerables);
 import { Gantt } from "./gantt";
+import { Dnd } from "./dnd";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 export function Graph(props: any) {
   const options: {} = {
@@ -54,6 +56,7 @@ class App extends React.Component {
       <div>
         <MyDropzone />
         <Gantt />
+        <Dnd />
       </div>
     );
   }
@@ -62,7 +65,7 @@ class App extends React.Component {
 const rootElement = document.getElementById('root')
 export const root = createRoot(rootElement);
 root.render(
-  <App />,
+  <App />
 );
 
 

@@ -16,7 +16,11 @@ const rendererConfig = {
     new HtmlWebpackPlugin({
       template: "./src/index.html"
     })
-  ]
+  ],
+  cache: {
+    type: 'filesystem',
+    allowCollectingMemory: true,
+  },
 }
 
 module.exports = [rendererConfig]
